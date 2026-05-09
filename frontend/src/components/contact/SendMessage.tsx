@@ -4,11 +4,13 @@ import { Card, CardContent, CardHeader } from "../ui/card";
 import Faq from "./Faq";
 import { Phone, Mail, MessageSquare, CircleQuestionMark } from "lucide-react";
 import Button from "../Button";
+import { useTranslation } from "react-i18next";
 
 const SendMessage = () => {
+  const { t } = useTranslation();
   return (
     <Section
-      title="Send a Message"
+      title={t("contact.sendMessage")}
       description="Fill out the form below and we'll get back to you within 24 hours."
       bgClassName="bg-secondary-50"
       id="contact"
@@ -17,7 +19,7 @@ const SendMessage = () => {
         <Card className="p-2">
           <CardHeader className="text-left p-2">
             <h3 className="text-2xl font-semibold text-primary">
-              Contact Form
+              {t("contact.sendMessage")}
             </h3>
             <p className="text-secondary-200 mt-1">
               We'll respond to your message as quickly as possible.
@@ -60,10 +62,10 @@ const SendMessage = () => {
           <CardHeader className="text-left p-2">
             <h3 className="text-2xl font-semibold text-primary flex items-center">
               <CircleQuestionMark className="inline-block mr-2" />
-              Frequently Asked Questions
+              {t("contact.faq")}
             </h3>
             <p className="text-secondary-200 mt-1">
-              Quick answers to common questions
+              {t("contact.faqDescription")}
             </p>
           </CardHeader>
           <Faq />

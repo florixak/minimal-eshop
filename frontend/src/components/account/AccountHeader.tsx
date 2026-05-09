@@ -3,37 +3,39 @@ import { Route } from "@/routes/account";
 import { User, Package, Heart, Settings, LogOut } from "lucide-react";
 import { Button } from "../ui/button";
 import { useUserStore } from "@/stores/useUserStore";
-
-const ACCOUNT_NAV = [
-  {
-    name: "Profile",
-    section: "profile" as const,
-    icon: User,
-    description: "Personal information",
-  },
-  {
-    name: "Orders",
-    section: "orders" as const,
-    icon: Package,
-    description: "Order history & tracking",
-  },
-  {
-    name: "Wishlist",
-    section: "wishlist" as const,
-    icon: Heart,
-    description: "Saved items",
-  },
-  {
-    name: "Settings",
-    section: "settings" as const,
-    icon: Settings,
-    description: "Account preferences",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const AccountHeader = () => {
+  const { t } = useTranslation();
   const search = Route.useSearch();
   const { logout } = useUserStore();
+
+  const ACCOUNT_NAV = [
+    {
+      name: t("account.profile"),
+      section: "profile" as const,
+      icon: User,
+      description: t("account.personalInfo"),
+    },
+    {
+      name: t("account.orders"),
+      section: "orders" as const,
+      icon: Package,
+      description: t("account.orderHistory"),
+    },
+    {
+      name: t("account.wishlist"),
+      section: "wishlist" as const,
+      icon: Heart,
+      description: t("account.noWishlist"),
+    },
+    {
+      name: t("account.settings"),
+      section: "settings" as const,
+      icon: Settings,
+      description: t("account.editProfile"),
+    },
+  ];
 
   const handleLogout = async () => {
     await logout();
@@ -46,10 +48,10 @@ const AccountHeader = () => {
           <div className="flex items-center justify-between mb-4">
             <div className="text-left">
               <h1 className="text-3xl font-bold text-primary font-playfair mb-2">
-                My Account
+                {t("account.title")}
               </h1>
               <p className="text-secondary-200">
-                Manage your account settings and preferences
+                {t("account.settings")}
               </p>
             </div>
 
@@ -59,7 +61,7 @@ const AccountHeader = () => {
               className="flex items-center gap-2 hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-colors"
             >
               <LogOut className="h-4 w-4" />
-              <span className="hidden sm:inline">Sign Out</span>
+              <span className="hidden sm:inline">{t("account.logout")}</span>
             </Button>
           </div>
         </div>

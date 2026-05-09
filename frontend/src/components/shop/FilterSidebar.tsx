@@ -6,6 +6,7 @@ import SortFilter from "../SortFilter";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTheMostExpensiveProductPrice } from "@/lib/api";
 import { getMostExpensivePrice } from "@/lib/dummyData";
+import { useTranslation } from "react-i18next";
 
 type FilterSidebarProps = {
   search: ReturnType<typeof Route.useSearch>;
@@ -13,6 +14,7 @@ type FilterSidebarProps = {
 };
 
 const FilterSidebar = ({ search, navigate }: FilterSidebarProps) => {
+  const { t } = useTranslation();
   const { data, isLoading, isError } = useQuery({
     queryKey: ["mostExpensivePrice", search.category],
     queryFn: async () => {
@@ -26,27 +28,27 @@ const FilterSidebar = ({ search, navigate }: FilterSidebarProps) => {
 
   return (
     <aside className="p-4 border rounded-lg h-fit sticky top-20 self-start w-full lg:w-72 xl:w-80 2xl:w-96 mb-8 md:mb-0">
-      <h2 className="text-primary font-bold">Filters</h2>
+      <h2 className="text-primary font-bold">{t("common.filter")}</h2>
       <div className="flex flex-col gap-6 mt-4">
         <div>
           <span className="text-sm font-medium text-primary">
-            Search for products
+            {t("common.search")}
           </span>
           <SearchBar search={search} navigate={navigate} className="py-0" />
         </div>
         <div>
           <span className="text-sm font-medium text-primary">
-            Filter by category
+            {t("shop.category")}
           </span>
           <CategoryFilter />
         </div>
         <div>
-          <span className="text-sm font-medium text-primary">Sort by</span>
+          <span className="text-sm font-medium text-primary">{t("shop.sortBy")}</span>
           <SortFilter search={search} navigate={navigate} />
         </div>
         <div>
           <span className="text-sm font-medium text-primary">
-            Filter by price
+            {t("shop.priceRange")}
           </span>
           <PriceFilter
             search={search}

@@ -1,0 +1,370 @@
+{
+  "header": {
+    "brand": "Minimal",
+    "home": "首页",
+    "shop": "商店",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "admin": "管理",
+    "searchPlaceholder": "搜索商品..."
+  },
+  "footer": {
+    "brandDescription": "为现代生活精选精美简约的家居用品。",
+    "shop": "商店",
+    "shopLinks": {
+      "allProducts": "全部商品",
+      "newArrivals": "新品上市",
+      "bestSellers": "热销商品",
+      "sale": "特价优惠"
+    },
+    "aboutUs": "关于我们",
+    "aboutLinks": {
+      "ourStory": "品牌故事",
+      "mission": "企业使命",
+      "values": "核心价值观"
+    },
+    "customerService": "客户服务",
+    "serviceLinks": {
+      "contactUs": "联系我们",
+      "returns": "退换货政策",
+      "shippingInfo": "配送信息"
+    },
+    "followUs": "关注我们：",
+    "copyright": "版权所有。"
+  },
+  "home": {
+    "heroTitle": "简约设计，",
+    "heroSubtitle": "非凡体验",
+    "heroDescription": "探索我们精心策划的极简家居系列。",
+    "shopCollection": "选购系列",
+    "learnMore": "了解更多",
+    "shopByCategory": "按类别选购",
+    "stayUpdatedTitle": "获取最新资讯",
+    "stayUpdatedDescription": "订阅我们的邮件，获取独家优惠和新品信息。",
+    "stayUpdatedPlaceholder": "输入您的邮箱",
+    "stayUpdatedButton": "订阅"
+  },
+  "shop": {
+    "title": "商店",
+    "description": "探索我们完整的极简家居 essentials 系列，精心策划，适合现代生活。",
+    "allProducts": "全部商品",
+    "sortBy": "排序方式",
+    "priceLowToHigh": "价格：从低到高",
+    "priceHighToLow": "价格：从高到低",
+    "newestArrivals": "最新上架",
+    "noFilter": "默认排序",
+    "category": "分类",
+    "all": "全部",
+    "priceRange": "价格范围",
+    "availability": "库存状态",
+    "inStock": "有货",
+    "outOfStock": "缺货",
+    "noProducts": "暂无商品。",
+    "view": "视图",
+    "addToCart": "加入购物车",
+    "quickView": "快速查看",
+    "shippingMethods": {
+      "STANDARD": {
+        "label": "标准配送",
+        "description": "3-5个工作日送达"
+      },
+      "EXPRESS": {
+        "label": "快递配送",
+        "description": "1-2个工作日送达"
+      },
+      "OVERNIGHT": {
+        "label": "次日达",
+        "description": "次工作日送达"
+      }
+    }
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出登录",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "firstName": "名",
+    "lastName": "姓",
+    "phone": "电话",
+    "forgotPassword": "忘记密码？",
+    "resetPassword": "重置密码",
+    "noAccount": "还没有账户？",
+    "hasAccount": "已有账户？",
+    "signUp": "注册",
+    "signIn": "登录",
+    "sendResetLink": "发送重置链接",
+    "verifyEmail": "验证邮箱",
+    "enterOtp": "请输入发送到您邮箱的验证码",
+    "verify": "验证",
+    "resendCode": "重新发送",
+    "notYou": "不是您？"
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "您的购物车是空的",
+    "startShopping": "去购物",
+    "subtotal": "小计",
+    "shipping": "运费",
+    "free": "免费",
+    "total": "合计",
+    "checkout": "结账",
+    "remove": "删除",
+    "quantity": "数量",
+    "summary": "订单摘要",
+    "freeShippingThreshold": "满{{price}}免运费",
+    "continueShopping": "继续购物"
+  },
+  "checkout": {
+    "step": "第{{step}}步，共{{total}}步",
+    "shipping": "配送",
+    "payment": "支付",
+    "shippingInfo": "配送信息",
+    "fullName": "姓名",
+    "address": "地址",
+    "city": "城市",
+    "state": "州/省",
+    "zipCode": "邮政编码",
+    "country": "国家",
+    "paymentMethod": "支付方式",
+    "cardNumber": "卡号",
+    "expiryDate": "有效期",
+    "cvc": "安全码",
+    "placeOrder": "提交订单",
+    "orderSummary": "订单摘要",
+    "orderPlaced": "下单成功！",
+    "orderNumber": "订单号",
+    "continueShopping": "继续购物",
+    "standardShipping": "标准配送",
+    "expressShipping": "快递配送",
+    "overnightShipping": "次日达",
+    "standardDelivery": "3-5个工作日送达",
+    "expressDelivery": "1-2个工作日送达",
+    "overnightDelivery": "次工作日送达",
+    "orderSuccessMessage": "感谢您的订单！我们将很快发送确认邮件。",
+    "orderCancelled": "订单已取消",
+    "orderCancelledMessage": "您的订单已取消。您可以继续购物或重新尝试。",
+    "tryAgain": "重新尝试",
+    "secureCheckout": "安全结账",
+    "freeShippingBanner": "满{{price}}免运费",
+    "30DayReturns": "30天退换货",
+    "shippingCalculatedAtCheckout": "运费在结账时计算。"
+  },
+  "account": {
+    "title": "我的账户",
+    "profile": "个人资料",
+    "orders": "我的订单",
+    "wishlist": "收藏夹",
+    "settings": "设置",
+    "editProfile": "编辑资料",
+    "changePassword": "修改密码",
+    "savedAddresses": "收货地址",
+    "noOrders": "暂无订单",
+    "noWishlist": "收藏夹是空的",
+    "viewOrder": "查看订单",
+    "personalInfo": "个人信息",
+    "emailAddress": "邮箱地址",
+    "memberSince": "自{{date}}起加入",
+    "logout": "退出登录",
+    "orderHistory": "订单历史",
+    "orderDetails": "订单详情",
+    "orderDate": "日期",
+    "orderStatus": "状态",
+    "orderTotal": "总计",
+    "shippingAddress": "配送地址",
+    "billingAddress": "账单地址"
+  },
+  "admin": {
+    "dashboard": "控制面板",
+    "orders": "订单管理",
+    "products": "商品管理",
+    "users": "用户管理",
+    "revenue": "收入",
+    "totalOrders": "总订单数",
+    "totalProducts": "商品总数",
+    "totalUsers": "用户总数",
+    "recentOrders": "最近订单",
+    "addProduct": "添加商品",
+    "editProduct": "编辑商品",
+    "addUser": "添加用户",
+    "editUser": "编辑用户"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "出了点问题",
+    "errorMessage": "发生意外错误，请稍后重试。",
+    "goHome": "返回首页",
+    "goToShop": "去商店",
+    "notFound": "404 - 页面未找到",
+    "notFoundMessage": "抱歉，您访问的页面不存在或已被移动。",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "search": "搜索",
+    "filter": "筛选",
+    "clear": "清除",
+    "apply": "应用",
+    "noResults": "未找到结果。",
+    "back": "返回",
+    "next": "下一步",
+    "submit": "提交",
+    "close": "关闭"
+  },
+  "about": {
+    "title": "关于我们",
+    "heroTitle": "我们的简约",
+    "heroSubtitle": "生活故事",
+    "heroDescription": "Minimal成立于2009年，源于一个简单的信念：美观实用的设计应该人人皆可享有。我们精选经典单品，让房子变成家。",
+    "shopOurStory": "选购我们的故事",
+    "meetOurTeam": "认识团队",
+    "ourMission": "我们的使命",
+    "missionDescription": "让美观、可持续且实用的设计触手可及。我们相信您的家应反映您的价值观——简约、真实、精心策划。",
+    "missionQuote": "设计不仅在于外观和感觉，更在于其运作方式。我们创造的空间，为真实生活而美丽运作。",
+    "missionAuthor": "- Sarah Chen，创始人",
+    "ourStory": "我们的故事",
+    "ourValues": "核心价值观",
+    "valuesDescription": "这些原则指导着我们所做的一切，从产品选择到客户服务。",
+    "ourTeam": "我们的团队",
+    "teamDescription": "Minimal背后的热情团队，致力于为您带来卓越的设计和服务。",
+    "testimonials": "客户评价",
+    "testimonialsTitle": "客户心声",
+    "testimonialsDescription": "以下是我们社区对Minimal体验的真实反馈。",
+    "statistics": "数据一览",
+    "stats": {
+      "happyCustomers": "满意客户",
+      "yearsExperience": "行业经验",
+      "curatedProducts": "精选产品",
+      "customerSatisfaction": "客户满意度"
+    },
+    "getInTouch": "联系我们",
+    "getInTouchDescription": "对我们的产品有疑问或需要设计建议？我们很乐意倾听。",
+    "emailUs": "发邮件",
+    "callUs": "打电话",
+    "visitUs": "访问门店",
+    "aboutEndTitle": "准备好改变您的空间了吗？",
+    "aboutEndDescription": "探索我们精选的极简家居系列，开始打造您的理想空间。",
+    "shopCollection": "选购系列",
+    "designConsultation": "设计咨询",
+    "values": [
+      {
+        "title": "可持续发展",
+        "description": "我们负责任地采购材料，与环保制造商合作，最大限度减少对环境的影响。"
+      },
+      {
+        "title": "品质工艺",
+        "description": "每件产品都经过精心挑选，品质卓越、经久耐用，设计经典永恒。"
+      },
+      {
+        "title": "社区关怀",
+        "description": "我们支持本地工匠和小型企业，培养一个热爱极简设计的创作者社区。"
+      },
+      {
+        "title": "客户信任",
+        "description": "您的满意是我们的首要任务。我们为每件产品提供全面的保修和卓越的服务。"
+      }
+    ],
+    "team": [
+      {
+        "role": "创始人兼创意总监",
+        "bio": "拥有15年室内设计经验，Sarah创立了Minimal，将美观的设计带入每个家庭。"
+      },
+      {
+        "role": "产品主管",
+        "bio": "Marcus确保每件产品都符合我们对质量、功能和美学吸引力的高标准。"
+      },
+      {
+        "role": "可持续发展总监",
+        "bio": "Elena领导我们对环境责任和道德采购实践的承诺。"
+      },
+      {
+        "role": "客户体验",
+        "bio": "David确保每一次客户互动都体现了我们对关怀、品质和细节的关注。"
+      }
+    ],
+    "testimonials": [
+      {
+        "role": "室内设计师",
+        "content": "Minimal已成为我为追求简洁精致风格的客户的首选。品质始终卓越。"
+      },
+      {
+        "role": "业主",
+        "content": "我用Minimal的产品布置了整个家。每件产品都工艺精美，客户服务也非常出色。"
+      },
+      {
+        "role": "建筑师",
+        "content": "对细节的关注和对可持续发展的承诺让Minimal脱颖而出。我向所有客户推荐他们。"
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "headerTitle": "联系我们",
+    "headerDescription": "我们很乐意收到您的来信！无论您对我们的产品有疑问、需要订单帮助，还是只是想打个招呼。",
+    "sendMessage": "发送消息",
+    "name": "姓名",
+    "email": "邮箱",
+    "subject": "主题",
+    "message": "消息",
+    "sendButton": "发送消息",
+    "generalInquiry": "一般咨询",
+    "orderSupport": "订单支持",
+    "productQuestion": "商品咨询",
+    "shippingReturns": "配送与退换",
+    "technicalSupport": "技术支持",
+    "partnerships": "商务合作",
+    "feedback": "意见反馈",
+    "faq": "常见问题",
+    "faqDescription": "查找关于产品、配送和政策的常见问题解答。",
+    "visitOurStore": "访问门店",
+    "visitOurStoreDescription": "欢迎光临我们的实体店，亲自体验我们的产品。",
+    "contactInfo": "联系信息",
+    "contactInfoDescription": "您可以通过以下方式联系我们。",
+    "faqItems": [
+      {
+        "question": "你们的退换货政策是什么？",
+        "answer": "我们提供30天退换货服务，所有商品需保持原状。订单满$100.00可免费退换。"
+      },
+      {
+        "question": "配送需要多长时间？",
+        "answer": "标准配送需3-5个工作日。快递配送（1-2天）和次日达选项可供选择。"
+      },
+      {
+        "question": "你们提供国际配送吗？",
+        "answer": "是的，我们配送到全球各地。国际配送通常需7-14个工作日，具体取决于地点。"
+      },
+      {
+        "question": "我可以追踪我的订单吗？",
+        "answer": "订单发货后，您将通过邮件收到追踪号码。您也可以在账户中追踪订单。"
+      }
+    ],
+    "contactInfoItems": [
+      {
+        "title": "访问门店",
+        "extra": "每周7天营业"
+      },
+      {
+        "title": "电话联系",
+        "extra": "周一至周五：上午9点-下午8点（美东时间）"
+      },
+      {
+        "title": "邮件联系",
+        "extra": "我们会在24小时内回复"
+      },
+      {
+        "title": "营业时间",
+        "extra": "美东时间（EST）"
+      }
+    ],
+    "categories": [
+      "一般咨询",
+      "订单支持",
+      "商品咨询",
+      "配送与退换",
+      "技术支持",
+      "商务合作",
+      "意见反馈"
+    ]
+  }
+}

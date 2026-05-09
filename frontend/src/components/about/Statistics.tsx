@@ -1,15 +1,19 @@
 import { STATISTICS } from "@/constants";
+import { useTranslation } from "react-i18next";
+
+const STAT_KEYS = ["happyCustomers", "yearsExperience", "curatedProducts", "customerSatisfaction"];
 
 const Statistics = () => {
+  const { t } = useTranslation();
   return (
     <section className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 py-24 px-6 md:px-16 lg:px-28">
-      {STATISTICS.map((statistic) => (
+      {STATISTICS.map((statistic, index) => (
         <div key={statistic.title} className="text-center space-y-2">
           <h3 className="text-primary text-3xl md:text-4xl font-bold">
             {statistic.value}
           </h3>
           <p className="text-secondary-200 text-md md:text-lg">
-            {statistic.title}
+            {t(`about.stats.${STAT_KEYS[index] || statistic.title}`)}
           </p>
         </div>
       ))}

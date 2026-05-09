@@ -8,8 +8,10 @@ import { profileSchema } from "@/lib/schema";
 import { updateUserProfile } from "@/lib/api";
 import FormField from "../FormField";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const ProfileSection = () => {
+  const { t } = useTranslation();
   const { user } = useUserStore();
   const {
     register,
@@ -69,23 +71,23 @@ const ProfileSection = () => {
       <Card>
         <CardHeader>
           <h2 className="text-2xl font-bold text-primary font-playfair">
-            Personal Information
+            {t("account.personalInfo")}
           </h2>
           <p className="text-secondary-200">
-            Update your account details and profile information
+            {t("account.editProfile")}
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
-              label="First Name"
+              label={t("auth.firstName")}
               id="firstName"
               register={register}
               isSubmitting={isSubmitting}
               error={errors.firstName?.message}
             />
             <FormField
-              label="Last Name"
+              label={t("auth.lastName")}
               id="lastName"
               register={register}
               isSubmitting={isSubmitting}
@@ -94,7 +96,7 @@ const ProfileSection = () => {
           </div>
 
           <FormField
-            label="Email Address"
+            label={t("account.emailAddress")}
             id="email"
             type="email"
             register={register}
@@ -103,7 +105,7 @@ const ProfileSection = () => {
           />
 
           <FormField
-            label="Phone Number"
+            label={t("auth.phone")}
             id="phone"
             type="tel"
             register={register}
@@ -114,11 +116,11 @@ const ProfileSection = () => {
           <Separator className="my-6 bg-secondary-100" />
 
           <h3 className="text-lg font-semibold text-primary font-playfair">
-            Shipping Address
+            {t("account.shippingAddress")}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
-              label="Street Address"
+              label={t("checkout.address")}
               id="address"
               register={register}
               isSubmitting={isSubmitting}
@@ -126,28 +128,28 @@ const ProfileSection = () => {
               className="md:col-span-2"
             />
             <FormField
-              label="City"
+              label={t("checkout.city")}
               id="city"
               register={register}
               isSubmitting={isSubmitting}
               error={errors.city?.message}
             />
             <FormField
-              label="State/Province"
+              label={t("checkout.state")}
               id="state"
               register={register}
               isSubmitting={isSubmitting}
               error={errors.state?.message}
             />
             <FormField
-              label="Postal Code"
+              label={t("checkout.zipCode")}
               id="postalCode"
               register={register}
               isSubmitting={isSubmitting}
               error={errors.postalCode?.message}
             />
             <FormField
-              label="Country"
+              label={t("checkout.country")}
               id="country"
               register={register}
               isSubmitting={isSubmitting}
@@ -160,7 +162,7 @@ const ProfileSection = () => {
               className="bg-primary hover:bg-primary/90"
               disabled={isSubmitting || !isDirty}
             >
-              Save Changes
+              {t("common.save")}
             </Button>
           </div>
         </CardContent>

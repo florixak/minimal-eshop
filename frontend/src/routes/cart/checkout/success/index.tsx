@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "@tanstack/react-router";
 import { useCartStore } from "@/stores/useCartStore";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type CheckoutSuccessSearch = {
   sessionId?: string;
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/cart/checkout/success/")({
 });
 
 function CheckoutSuccess() {
+  const { t } = useTranslation();
   const { sessionId, orderId } = Route.useSearch();
   const { clearCart } = useCartStore();
   const [copiedField, setCopiedField] = useState<string | null>(null);
@@ -49,11 +51,10 @@ function CheckoutSuccess() {
         <div className="mb-6">
           <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
           <h1 className="text-3xl font-bold text-primary font-playfair mb-2">
-            Payment Successful!
+            {t("checkout.orderPlaced")}
           </h1>
           <p className="text-secondary-200">
-            Thank you for your order. We'll send you a confirmation email
-            shortly.
+            {t("checkout.orderSuccessMessage")}
           </p>
         </div>
 
@@ -61,7 +62,7 @@ function CheckoutSuccess() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Package className="h-5 w-5" />
-              Order Details
+              {t("account.orderDetails")}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -70,7 +71,7 @@ function CheckoutSuccess() {
                 <div className="flex items-center justify-between">
                   <div className="text-left">
                     <p className="text-sm font-medium text-green-800 mb-1">
-                      Order Number
+                      {t("checkout.orderNumber")}
                     </p>
                     <p className="text-lg font-mono font-bold text-green-900">
                       #{orderId}
@@ -127,7 +128,7 @@ function CheckoutSuccess() {
           {orderId && (
             <Button asChild className="w-full">
               <Link to="/account/orders/$orderId" params={{ orderId: orderId }}>
-                View Order Details
+                {t("account.viewOrder")}
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
@@ -146,7 +147,7 @@ function CheckoutSuccess() {
                 page: 1,
               }}
             >
-              Continue Shopping
+              {t("checkout.continueShopping")}
             </Link>
           </Button>
         </div>

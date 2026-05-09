@@ -11,12 +11,14 @@ import { Route } from "@/routes/auth";
 import { Separator } from "../ui/separator";
 import { useUserStore } from "@/stores/useUserStore";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 type LoginFormProps = {
   redirectTo?: string;
 };
 
 const LoginForm = ({ redirectTo }: LoginFormProps) => {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = Route.useNavigate();
@@ -81,7 +83,7 @@ const LoginForm = ({ redirectTo }: LoginFormProps) => {
       </div>
 
       <div>
-        <Label className="text-sm font-semibold text-primary">Password</Label>
+        <Label className="text-sm font-semibold text-primary">{t("auth.password")}</Label>
         <div className="relative mt-1">
           <Input
             {...register("password")}
@@ -113,7 +115,7 @@ const LoginForm = ({ redirectTo }: LoginFormProps) => {
           search={{ mode: "forgot-password", redirectTo }}
           className="text-sm text-secondary-200 hover:underline"
         >
-          Forgot your password?
+          {t("auth.forgotPassword")}
         </Link>
       </div>
 
@@ -122,19 +124,19 @@ const LoginForm = ({ redirectTo }: LoginFormProps) => {
         className="w-full bg-primary hover:bg-primary/90"
         disabled={isLoading}
       >
-        {isLoading ? "Signing in..." : "Sign In"}
+        {isLoading ? `${t("auth.signIn")}...` : t("auth.signIn")}
       </Button>
 
       <Separator orientation="horizontal" className="bg-secondary-100" />
 
       <p className="mt-4 text-sm text-primary text-center">
-        Don't have an account?{" "}
+        {t("auth.noAccount")}{" "}
         <Link
           to="/auth"
           search={{ mode: "register", redirectTo }}
           className="text-secondary-200 hover:underline font-medium"
         >
-          Sign up
+          {t("auth.signUp")}
         </Link>
       </p>
     </form>

@@ -2,12 +2,14 @@ import { TESTIMONIALS } from "@/constants";
 import Section from "../Section";
 import { Card, CardContent } from "../ui/card";
 import { Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
+  const { t } = useTranslation();
   return (
     <Section
-      title="What Our Customers Say"
-      description="Don't just take our word for it. Here's what our community has to say about their Minimal experience."
+      title={t("about.testimonialsTitle")}
+      description={t("about.testimonialsDescription")}
     >
       <div className="grid md:grid-cols-3 gap-8 text-left">
         {TESTIMONIALS.map((testimonial, index) => (
@@ -22,13 +24,15 @@ const Testimonials = () => {
                 ))}
               </div>
               <blockquote className="text-primary italic">
-                "{testimonial.content}"
+                "{t(`about.testimonials.${index}.content`)}"
               </blockquote>
               <div>
                 <cite className="text-primary font-semibold not-italic">
                   {testimonial.name}
                 </cite>
-                <p className="text-secondary-200 text-sm">{testimonial.role}</p>
+                <p className="text-secondary-200 text-sm">
+                  {t(`about.testimonials.${index}.role`)}
+                </p>
               </div>
             </CardContent>
           </Card>

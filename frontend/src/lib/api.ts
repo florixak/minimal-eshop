@@ -413,7 +413,8 @@ export const register = async (
     }),
   });
   if (!response.ok) {
-    throw new Error("Failed to register");
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.message || "Failed to register");
   }
   const data = (await response.json()) as Response<{ user: User }>;
   return data;

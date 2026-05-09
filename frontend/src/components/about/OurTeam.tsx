@@ -1,12 +1,14 @@
 import Section from "../Section";
 import { TEAM } from "@/constants";
 import { Card, CardContent } from "../ui/card";
+import { useTranslation } from "react-i18next";
 
 const OurTeam = () => {
+  const { t } = useTranslation();
   return (
     <Section
-      title="Meet Our Team"
-      description="The passionate people behind Minimal, dedicated to bringing you exceptional design and service."
+      title={t("about.ourTeam")}
+      description={t("about.teamDescription")}
       bgClassName="bg-secondary-50"
       id="team"
     >
@@ -28,10 +30,12 @@ const OurTeam = () => {
                 <h3 className="text-lg font-semibold text-primary">
                   {member.name}
                 </h3>
-                <p className="text-secondary-200 font-medium">{member.role}</p>
+                <p className="text-secondary-200 font-medium">
+                  {t(`about.team.${index}.role`)}
+                </p>
               </div>
               <p className="text-secondary-200 text-sm leading-relaxed">
-                {member.bio}
+                {t(`about.team.${index}.bio`)}
               </p>
             </CardContent>
           </Card>

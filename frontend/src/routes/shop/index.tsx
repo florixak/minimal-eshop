@@ -5,6 +5,7 @@ import type { PRODUCT_FILTERS } from "@/constants";
 import type { View } from "@/types";
 import { createFileRoute } from "@tanstack/react-router";
 import { useProducts } from "@/hooks/useProducts";
+import { useTranslation } from "react-i18next";
 
 export type ShopSearch = {
   category: string | "all";
@@ -32,6 +33,7 @@ export const Route = createFileRoute("/shop/")({
 });
 
 function Shop() {
+  const { t } = useTranslation();
   const search = Route.useSearch();
   const navigate = Route.useNavigate();
 
@@ -43,8 +45,8 @@ function Shop() {
   return (
     <>
       <SectionHeader
-        title="Shop All Products"
-        description="Discover our complete collection of minimalist home essentials, carefully curated for modern living."
+        title={t("shop.title")}
+        description={t("shop.description")}
       />
       <section className="flex flex-col lg:flex-row gap-8 px-6 md:px-16 py-12">
         <FilterSidebar search={search} navigate={navigate} />

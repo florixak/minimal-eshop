@@ -8,15 +8,17 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import { Separator } from "../ui/separator";
 import toast from "react-hot-toast";
-import { resetPassword } from "@/lib/api"; // implement this API call
+import { resetPassword } from "@/lib/api";
 import AuthCard from "./AuthCard";
 import { resetPasswordSchema, type ResetPasswordFormData } from "@/lib/schema";
+import { useTranslation } from "react-i18next";
 
 type ResetPasswordFormProps = {
   token: string;
 };
 
 const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -58,14 +60,14 @@ const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
           <CheckCircle className="size-16 text-green-500" />
         </div>
         <div className="text-lg font-semibold text-primary">
-          Password reset successful!
+          {t("auth.resetPassword")}
         </div>
         <p className="text-secondary-400">
           You can now log in with your new password.
         </p>
         <Button asChild className="w-full">
           <Link to="/auth" search={{ mode: "login" }}>
-            Go to Login
+            {t("auth.signIn")}
           </Link>
         </Button>
       </div>
@@ -74,7 +76,7 @@ const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
 
   return (
     <AuthCard
-      title="Reset Your Password"
+      title={t("auth.resetPassword")}
       description="Enter your new password below."
       className="mt-4"
     >
@@ -86,13 +88,13 @@ const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
             className="inline-flex items-center gap-2 text-sm text-secondary-200 hover:underline"
           >
             <ArrowLeft className="size-4" />
-            Back to Login
+            {t("common.back")}
           </Link>
         </div>
 
         <div>
           <Label className="text-sm font-semibold text-primary">
-            New Password
+            {t("auth.password")}
           </Label>
           <Input
             {...register("newPassword")}
@@ -109,7 +111,7 @@ const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
 
         <div>
           <Label className="text-sm font-semibold text-primary">
-            Confirm Password
+            {t("auth.confirmPassword")}
           </Label>
           <Input
             {...register("confirmNewPassword")}
@@ -129,7 +131,7 @@ const ResetPasswordForm = ({ token }: ResetPasswordFormProps) => {
           className="w-full bg-primary hover:bg-primary/90"
           disabled={isLoading}
         >
-          {isLoading ? "Resetting..." : "Reset Password"}
+          {isLoading ? `${t("auth.resetPassword")}...` : t("auth.resetPassword")}
         </Button>
 
         <Separator orientation="horizontal" className="bg-secondary-100" />

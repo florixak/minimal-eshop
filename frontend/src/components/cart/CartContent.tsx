@@ -8,8 +8,10 @@ import { FREE_SHIPPING_THRESHOLD } from "@/constants";
 import OrderSummary from "../checkout/OrderSummary";
 import { useCartStore } from "@/stores/useCartStore";
 import CartItem from "./CartItem";
+import { useTranslation } from "react-i18next";
 
 const CartContent = () => {
+  const { t } = useTranslation();
   const {
     cartItems,
     incrementItemQuantity,
@@ -27,7 +29,7 @@ const CartContent = () => {
             <Card>
               <CardHeader>
                 <h2 className="text-xl font-bold text-primary font-playfair">
-                  Items in your cart ({cartItems.length})
+                  {t("cart.title")} ({cartItems.length})
                 </h2>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -46,7 +48,7 @@ const CartContent = () => {
                   <div className="max-w-2xl mx-auto text-center space-y-6 p-4">
                     <ShoppingBag className="h-24 w-24 text-secondary-200 mx-auto" />
                     <h2 className="text-2xl font-bold text-primary font-playfair">
-                      Your cart is empty
+                      {t("cart.empty")}
                     </h2>
                     <p className="text-secondary-200">
                       Add some products to get started!
@@ -64,7 +66,7 @@ const CartContent = () => {
                           page: 1,
                         }}
                       >
-                        Start Shopping
+                        {t("cart.startShopping")}
                       </Link>
                     </Button>
                   </div>

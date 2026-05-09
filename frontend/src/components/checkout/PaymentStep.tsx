@@ -7,6 +7,7 @@ import { SHIPPING_METHODS } from "@/constants";
 import { Link } from "@tanstack/react-router";
 import { Card, CardHeader, CardContent, CardFooter } from "../ui/card";
 import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
 
 type PaymentStepProps = {
   shippingData: CheckoutFormData;
@@ -21,6 +22,7 @@ const PaymentStep = ({
   isSubmitting,
   cartItems,
 }: PaymentStepProps) => {
+  const { t } = useTranslation();
   const { total } = useOrderCalculations(
     cartItems,
     SHIPPING_METHODS[shippingData.shippingMethod].cost || 0
@@ -30,7 +32,7 @@ const PaymentStep = ({
       <Card>
         <CardHeader>
           <h3 className="text-lg font-semibold text-primary font-playfair">
-            Shipping Address
+            {t("account.shippingAddress")}
           </h3>
         </CardHeader>
         <CardContent>
@@ -58,7 +60,7 @@ const PaymentStep = ({
           >
             <Link to="/cart/checkout" search={{ step: 1 }}>
               <ArrowLeft className="h-4 w-4 mr-1" />
-              Edit Shipping Info
+              {t("common.edit")}
             </Link>
           </Button>
         </CardFooter>
@@ -68,7 +70,7 @@ const PaymentStep = ({
         <CardHeader>
           <h2 className="flex items-center text-xl font-bold text-primary font-playfair">
             <CreditCard className="inline-block mr-2" size={24} />
-            Secure Payment
+            {t("checkout.secureCheckout")}
           </h2>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -104,12 +106,12 @@ const PaymentStep = ({
               {isSubmitting ? (
                 <>
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                  <span>Redirecting to payment...</span>
+                  <span>{t("common.loading")}</span>
                 </>
               ) : (
                 <>
                   <Lock className="h-4 w-4" />
-                  <span>Pay {formatPrice(total)}</span>
+                  <span>{t("checkout.placeOrder")} ({formatPrice(total)})</span>
                 </>
               )}
             </div>

@@ -5,6 +5,7 @@ import type { PRODUCT_FILTERS } from "@/constants";
 import type { View } from "@/types";
 import { createFileRoute } from "@tanstack/react-router";
 import LandingImage from "../assets/hero-image.webp";
+import { useTranslation } from "react-i18next";
 
 type IndexSearch = {
   category: string;
@@ -24,15 +25,16 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const { t } = useTranslation();
   const navigate = Route.useNavigate();
   return (
     <>
       <Hero
-        title="Minimal Design,"
-        subtitle="Maximum Impact"
-        description="Discover our curated collection of minimalist home essentials."
+        title={t("home.heroTitle")}
+        subtitle={t("home.heroSubtitle")}
+        description={t("home.heroDescription")}
         primaryButton={{
-          text: "Shop Collection",
+          text: t("home.shopCollection"),
           onClick: () =>
             navigate({
               to: "/shop",
@@ -48,13 +50,13 @@ function Index() {
             }),
         }}
         secondaryButton={{
-          text: "Learn More",
+          text: t("home.learnMore"),
           onClick: () => navigate({ to: "/about" }),
         }}
         image={LandingImage}
       />
 
-      <CategoryProducts title={"Shop By Category"} />
+      <CategoryProducts title={t("home.shopByCategory")} />
       <StayUpdated />
     </>
   );

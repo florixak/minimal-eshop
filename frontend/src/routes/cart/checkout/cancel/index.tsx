@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { fetchOrder } from "@/lib/api";
+import { useTranslation } from "react-i18next";
 
 type CheckoutCanceledSearch = {
   orderId?: string;
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/cart/checkout/cancel/")({
 });
 
 function CheckoutCanceled() {
+  const { t } = useTranslation();
   const { orderId } = Route.useSearch();
 
   const { data, isLoading, isError } = useQuery({
@@ -27,11 +29,11 @@ function CheckoutCanceled() {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>{t("common.loading")}</div>;
   }
 
   if (isError) {
-    return <div>Error loading order details.</div>;
+    return <div>{t("common.errorMessage")}</div>;
   }
 
   if (!data || !data.success) {
@@ -44,11 +46,10 @@ function CheckoutCanceled() {
         <div className="mb-6">
           <XCircle className="h-16 w-16 text-red-500 mx-auto mb-4" />
           <h1 className="text-3xl font-bold text-primary font-playfair mb-2">
-            Payment Canceled
+            {t("checkout.orderCancelled")}
           </h1>
           <p className="text-secondary-200">
-            Don't worry! Your order is saved and you can complete payment
-            anytime.
+            {t("checkout.orderCancelledMessage")}
           </p>
         </div>
 
@@ -111,14 +112,14 @@ function CheckoutCanceled() {
                   order_id: orderId,
                 }}
               >
-                Complete Payment
+                {t("checkout.tryAgain")}
               </Link>
             </Button>
           ) : (
             <Button asChild className="w-full">
               <Link to="/cart/checkout" search={{ step: 1 }}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Try Again
+                {t("checkout.tryAgain")}
               </Link>
             </Button>
           )}
@@ -126,13 +127,13 @@ function CheckoutCanceled() {
           {orderId && (
             <Button variant="outline" asChild className="w-full">
               <Link to="/account/orders/$orderId" params={{ orderId: orderId }}>
-                View Order Details
+                {t("account.viewOrder")}
               </Link>
             </Button>
           )}
 
           <Button variant="outline" asChild className="w-full">
-            <Link to="/cart">Back to Cart</Link>
+            <Link to="/cart">{t("common.back")}</Link>
           </Button>
         </div>
 

@@ -146,27 +146,27 @@ const AdminUsersEditUserIdRoute = AdminUsersEditUserIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutIndexRoute
-  '/account': typeof AccountIndexRoute
-  '/admin': typeof AdminIndexRoute
-  '/auth': typeof AuthIndexRoute
-  '/cart': typeof CartIndexRoute
-  '/contact': typeof ContactIndexRoute
-  '/reset-password': typeof ResetPasswordIndexRoute
-  '/shop': typeof ShopIndexRoute
+  '/about/': typeof AboutIndexRoute
+  '/account/': typeof AccountIndexRoute
+  '/admin/': typeof AdminIndexRoute
+  '/auth/': typeof AuthIndexRoute
+  '/cart/': typeof CartIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/reset-password/': typeof ResetPasswordIndexRoute
+  '/shop/': typeof ShopIndexRoute
   '/account/orders/$orderId': typeof AccountOrdersOrderIdRoute
   '/admin/orders/$orderId': typeof AdminOrdersOrderIdRoute
   '/admin/products/$productId': typeof AdminProductsProductIdRoute
   '/admin/users/$userId': typeof AdminUsersUserIdRoute
-  '/admin/orders': typeof AdminOrdersIndexRoute
-  '/admin/products': typeof AdminProductsIndexRoute
-  '/admin/users': typeof AdminUsersIndexRoute
-  '/cart/checkout': typeof CartCheckoutIndexRoute
+  '/admin/orders/': typeof AdminOrdersIndexRoute
+  '/admin/products/': typeof AdminProductsIndexRoute
+  '/admin/users/': typeof AdminUsersIndexRoute
+  '/cart/checkout/': typeof CartCheckoutIndexRoute
   '/admin/users/edit/$userId': typeof AdminUsersEditUserIdRoute
-  '/admin/products/new': typeof AdminProductsNewIndexRoute
-  '/admin/users/new': typeof AdminUsersNewIndexRoute
-  '/cart/checkout/cancel': typeof CartCheckoutCancelIndexRoute
-  '/cart/checkout/success': typeof CartCheckoutSuccessIndexRoute
+  '/admin/products/new/': typeof AdminProductsNewIndexRoute
+  '/admin/users/new/': typeof AdminUsersNewIndexRoute
+  '/cart/checkout/cancel/': typeof CartCheckoutCancelIndexRoute
+  '/cart/checkout/success/': typeof CartCheckoutSuccessIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -221,27 +221,27 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/account'
-    | '/admin'
-    | '/auth'
-    | '/cart'
-    | '/contact'
-    | '/reset-password'
-    | '/shop'
+    | '/about/'
+    | '/account/'
+    | '/admin/'
+    | '/auth/'
+    | '/cart/'
+    | '/contact/'
+    | '/reset-password/'
+    | '/shop/'
     | '/account/orders/$orderId'
     | '/admin/orders/$orderId'
     | '/admin/products/$productId'
     | '/admin/users/$userId'
-    | '/admin/orders'
-    | '/admin/products'
-    | '/admin/users'
-    | '/cart/checkout'
+    | '/admin/orders/'
+    | '/admin/products/'
+    | '/admin/users/'
+    | '/cart/checkout/'
     | '/admin/users/edit/$userId'
-    | '/admin/products/new'
-    | '/admin/users/new'
-    | '/cart/checkout/cancel'
-    | '/cart/checkout/success'
+    | '/admin/products/new/'
+    | '/admin/users/new/'
+    | '/cart/checkout/cancel/'
+    | '/cart/checkout/success/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -329,84 +329,84 @@ declare module '@tanstack/react-router' {
     '/shop/': {
       id: '/shop/'
       path: '/shop'
-      fullPath: '/shop'
+      fullPath: '/shop/'
       preLoaderRoute: typeof ShopIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reset-password/': {
       id: '/reset-password/'
       path: '/reset-password'
-      fullPath: '/reset-password'
+      fullPath: '/reset-password/'
       preLoaderRoute: typeof ResetPasswordIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact/': {
       id: '/contact/'
       path: '/contact'
-      fullPath: '/contact'
+      fullPath: '/contact/'
       preLoaderRoute: typeof ContactIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cart/': {
       id: '/cart/'
       path: '/cart'
-      fullPath: '/cart'
+      fullPath: '/cart/'
       preLoaderRoute: typeof CartIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth/': {
       id: '/auth/'
       path: '/auth'
-      fullPath: '/auth'
+      fullPath: '/auth/'
       preLoaderRoute: typeof AuthIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/': {
       id: '/admin/'
       path: '/admin'
-      fullPath: '/admin'
+      fullPath: '/admin/'
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/account/': {
       id: '/account/'
       path: '/account'
-      fullPath: '/account'
+      fullPath: '/account/'
       preLoaderRoute: typeof AccountIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/': {
       id: '/about/'
       path: '/about'
-      fullPath: '/about'
+      fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cart/checkout/': {
       id: '/cart/checkout/'
       path: '/cart/checkout'
-      fullPath: '/cart/checkout'
+      fullPath: '/cart/checkout/'
       preLoaderRoute: typeof CartCheckoutIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/users/': {
       id: '/admin/users/'
       path: '/admin/users'
-      fullPath: '/admin/users'
+      fullPath: '/admin/users/'
       preLoaderRoute: typeof AdminUsersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/products/': {
       id: '/admin/products/'
       path: '/admin/products'
-      fullPath: '/admin/products'
+      fullPath: '/admin/products/'
       preLoaderRoute: typeof AdminProductsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/orders/': {
       id: '/admin/orders/'
       path: '/admin/orders'
-      fullPath: '/admin/orders'
+      fullPath: '/admin/orders/'
       preLoaderRoute: typeof AdminOrdersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
@@ -441,28 +441,28 @@ declare module '@tanstack/react-router' {
     '/cart/checkout/success/': {
       id: '/cart/checkout/success/'
       path: '/cart/checkout/success'
-      fullPath: '/cart/checkout/success'
+      fullPath: '/cart/checkout/success/'
       preLoaderRoute: typeof CartCheckoutSuccessIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cart/checkout/cancel/': {
       id: '/cart/checkout/cancel/'
       path: '/cart/checkout/cancel'
-      fullPath: '/cart/checkout/cancel'
+      fullPath: '/cart/checkout/cancel/'
       preLoaderRoute: typeof CartCheckoutCancelIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/users/new/': {
       id: '/admin/users/new/'
       path: '/admin/users/new'
-      fullPath: '/admin/users/new'
+      fullPath: '/admin/users/new/'
       preLoaderRoute: typeof AdminUsersNewIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/products/new/': {
       id: '/admin/products/new/'
       path: '/admin/products/new'
-      fullPath: '/admin/products/new'
+      fullPath: '/admin/products/new/'
       preLoaderRoute: typeof AdminProductsNewIndexRouteImport
       parentRoute: typeof rootRouteImport
     }

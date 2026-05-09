@@ -14,8 +14,10 @@ import { Info } from "lucide-react";
 import toast from "react-hot-toast";
 import { resendVerificationCode } from "@/lib/api";
 import { useUserStore } from "@/stores/useUserStore";
+import { useTranslation } from "react-i18next";
 
 const NotVerifiedModal = () => {
+  const { t } = useTranslation();
   const { user } = useUserStore();
   const navigate = useNavigate();
 
@@ -40,13 +42,13 @@ const NotVerifiedModal = () => {
     <AlertDialog>
       <AlertDialogTrigger className="relative flex flex-row gap-2 items-center cursor-pointer text-yellow-500">
         <span className="absolute text-sm hidden sm:block -left-20 top-1/2 transform -translate-y-1/2">
-          Not Verified
+          {t("auth.verifyEmail")}
         </span>
         <Info className="size-5" />
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Email Not Verified</AlertDialogTitle>
+          <AlertDialogTitle>{t("auth.verifyEmail")}</AlertDialogTitle>
           <AlertDialogDescription>
             You will not be able to access all features until your email is
             verified. Please verify your email by clicking the button below.
@@ -54,13 +56,13 @@ const NotVerifiedModal = () => {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel className="cursor-pointer">
-            Cancel
+            {t("common.cancel")}
           </AlertDialogCancel>
           <AlertDialogAction
             onClick={handleVerifyClick}
             className="cursor-pointer"
           >
-            Verify Email
+            {t("auth.verifyEmail")}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
