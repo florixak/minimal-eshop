@@ -1,8 +1,10 @@
 import { Route } from "@/routes/about";
 import Section from "../Section";
 import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
 
 const AboutEnd = () => {
+  const { t } = useTranslation();
   const navigate = Route.useNavigate();
   const handleShopCollectionClick = () => {
     navigate({
@@ -27,8 +29,8 @@ const AboutEnd = () => {
 
   return (
     <Section
-      title="Ready to Transform Your Space?"
-      description="Discover our curated collection of minimalist home essentials and start creating your perfect space today."
+      title={t("about.aboutEndTitle")}
+      description={t("about.aboutEndDescription")}
     >
       <div className="flex flex-col md:flex-row md:space-x-4">
         <Button
@@ -36,14 +38,14 @@ const AboutEnd = () => {
           className="py-4 px-6"
           onClick={handleShopCollectionClick}
         >
-          Shop Collection
+          {t("about.shopCollection")}
         </Button>
         <Button
           variant="outline"
           className="py-4 px-6"
           onClick={handleSecondaryButtonClick}
         >
-          Design Consultation
+          {t("about.designConsultation")}
         </Button>
       </div>
     </Section>

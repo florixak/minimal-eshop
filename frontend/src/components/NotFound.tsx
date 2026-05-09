@@ -1,14 +1,19 @@
 import { AlertTriangle } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
 const NotFound = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-white">
       <AlertTriangle className="h-16 w-16 text-yellow-500 mb-6" />
-      <h1 className="text-4xl font-bold text-primary mb-2">404 - Not Found</h1>
+      <h1 className="text-4xl font-bold text-primary mb-2">
+        {t("common.notFound")}
+      </h1>
       <p className="text-secondary-400 mb-6 text-center max-w-md">
-        Sorry, the page you are looking for does not exist or has been moved.
+        {t("common.notFoundMessage")}
       </p>
       <Button asChild>
         <Link
@@ -23,7 +28,7 @@ const NotFound = () => {
             page: 1,
           }}
         >
-          Go to Shop
+          {t("common.goToShop")}
         </Link>
       </Button>
     </div>

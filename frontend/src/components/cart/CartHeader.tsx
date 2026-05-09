@@ -1,8 +1,11 @@
 import { ShoppingCart, ArrowLeft } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
 
 const CartHeader = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-secondary-50 py-12 pt-24 px-6 md:px-16 lg:px-28">
       <div className="max-w-6xl mx-auto">
@@ -22,7 +25,7 @@ const CartHeader = () => {
                 }}
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Continue Shopping
+                {t("cart.continueShopping")}
               </Link>
             </Button>
           </div>
@@ -31,7 +34,7 @@ const CartHeader = () => {
             <div className="flex items-center justify-center space-x-3 mb-2">
               <ShoppingCart className="h-8 w-8 text-primary" />
               <h1 className="text-3xl md:text-4xl font-bold text-primary font-playfair">
-                Shopping Cart
+                {t("cart.title")}
               </h1>
             </div>
             <p className="text-secondary-200 font-playfair">

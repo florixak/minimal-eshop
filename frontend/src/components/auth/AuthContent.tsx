@@ -4,45 +4,41 @@ import AuthCard from "./AuthCard";
 import RegisterForm from "./RegisterForm";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import VerifyEmail from "./VerifyEmail";
+import { useTranslation } from "react-i18next";
 
 const AuthContent = () => {
+  const { t } = useTranslation();
   const search = Route.useSearch();
 
   const renderContent = () => {
     switch (search.mode) {
       case "login":
         return (
-          <AuthCard title="Welcome Back!" description="Login to your account">
+          <AuthCard title={t("auth.login")} description={t("auth.signIn")}>
             <LoginForm />
           </AuthCard>
         );
       case "register":
         return (
-          <AuthCard
-            title="Create an Account"
-            description="Sign up to get started"
-          >
+          <AuthCard title={t("auth.register")} description={t("auth.signUp")}>
             <RegisterForm />
           </AuthCard>
         );
       case "forgot-password":
         return (
-          <AuthCard title="Forgot Password" description="Reset your password">
+          <AuthCard title={t("auth.forgotPassword")} description={t("auth.resetPassword")}>
             <ForgotPasswordForm />
           </AuthCard>
         );
       case "verify-email":
         return (
-          <AuthCard
-            title="Verify Your Email"
-            description="Please check your email to verify your account"
-          >
+          <AuthCard title={t("auth.verifyEmail")} description={t("auth.enterOtp")}>
             <VerifyEmail />
           </AuthCard>
         );
       default:
         return (
-          <AuthCard title="Welcome Back!" description="Login to your account">
+          <AuthCard title={t("auth.login")} description={t("auth.signIn")}>
             <LoginForm />
           </AuthCard>
         );
@@ -56,7 +52,7 @@ const AuthContent = () => {
           search.mode === "register" ? "mt-22" : ""
         } text-4xl font-bold text-primary font-playfair`}
       >
-        Minimal
+        {t("header.brand")}
       </h1>
       {renderContent()}
       <p className="text-center text-secondary-200 text-xs max-w-xs mx-auto">

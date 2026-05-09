@@ -14,27 +14,30 @@ import { Badge } from "./ui/badge";
 import { useCartStore } from "@/stores/useCartStore";
 import { useUserStore } from "@/stores/useUserStore";
 import NotVerifiedModal from "./auth/NotVerifiedModal";
+import LanguageToggle from "./LanguageToggle";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
   {
-    title: "Home",
+    key: "home",
     href: "/",
   },
   {
-    title: "Shop",
+    key: "shop",
     href: "/shop",
   },
   {
-    title: "About",
+    key: "about",
     href: "/about",
   },
   {
-    title: "Contact",
+    key: "contact",
     href: "/contact",
   },
 ];
 
 const Header = () => {
+  const { t } = useTranslation();
   const { isAuthenticated, isAdmin, user } = useUserStore();
   const { getTotalItems } = useCartStore();
 
@@ -47,19 +50,19 @@ const Header = () => {
         to="/"
         search={{ category: "all", sortBy: "no-filter", view: "grid" }}
       >
-        <h1 className="text-2xl font-bold text-primary">Minimal</h1>
+        <h1 className="text-2xl font-bold text-primary">{t("header.brand")}</h1>
       </Link>
       <nav className="hidden lg:flex flex-row gap-10 items-center">
         {navLinks.map((link) => (
           <Link
-            key={link.title}
+            key={link.key}
             to={link.href}
             activeProps={{ className: "font-bold text-primary cursor-default" }}
             inactiveProps={{
               className: "text-primary hover:text-secondary-200",
             }}
           >
-            {link.title}
+            {t(`header.${link.key}`)}
           </Link>
         ))}
         {isAuthenticated && isAdmin() && (
@@ -71,11 +74,12 @@ const Header = () => {
               className: "text-primary hover:text-secondary-200",
             }}
           >
-            Admin
+            {t("header.admin")}
           </Link>
         )}
       </nav>
       <div className="flex flex-row gap-2 md:gap-6 items-center">
+        <LanguageToggle />
         {user && !user.verified && <NotVerifiedModal />}
         <Button
           variant="ghost"
@@ -127,7 +131,7 @@ const Header = () => {
             <SheetHeader className="text-left pb-4">
               <div className="flex items-center justify-between">
                 <SheetTitle className="text-2xl font-bold text-primary font-playfair">
-                  Minimal
+                  {t("header.brand")}
                 </SheetTitle>
                 <SheetClose>
                   <Button variant="ghost" size="icon" className="text-primary">
@@ -138,7 +142,7 @@ const Header = () => {
             </SheetHeader>
             <nav className="flex flex-col gap-6 pl-5">
               {navLinks.map((link) => (
-                <SheetClose asChild key={link.title}>
+                <SheetClose asChild key={link.key}>
                   <Link
                     to={link.href}
                     className="text-lg text-primary hover:text-secondary-200"
@@ -149,7 +153,7 @@ const Header = () => {
                       className: "text-primary hover:text-secondary-200",
                     }}
                   >
-                    {link.title}
+                    {t(`header.${link.key}`)}
                   </Link>
                 </SheetClose>
               ))}
@@ -165,14 +169,14 @@ const Header = () => {
                       className: "text-primary hover:text-secondary-200",
                     }}
                   >
-                    Admin
+                    {t("header.admin")}
                   </Link>
                 </SheetClose>
               )}
             </nav>
             <SheetFooter>
               <p className="text-center text-sm text-secondary-200">
-                © {new Date().getFullYear()} Minimal. All rights reserved.
+                © {new Date().getFullYear()} {t("header.brand")}. {t("footer.copyright")}
               </p>
             </SheetFooter>
           </SheetContent>

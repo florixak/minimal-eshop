@@ -1,4 +1,3 @@
-// components/auth/ForgotPasswordForm.tsx
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,12 +13,14 @@ import {
 } from "@/lib/schema";
 import { requestResetPassword } from "@/lib/api";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 type ForgotPasswordFormProps = {
   redirectTo?: string;
 };
 
 const ForgotPasswordForm = ({ redirectTo }: ForgotPasswordFormProps) => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -86,7 +87,7 @@ const ForgotPasswordForm = ({ redirectTo }: ForgotPasswordFormProps) => {
           className="w-full"
           disabled={isLoading}
         >
-          {isLoading ? "Resending..." : "Resend Email"}
+          {isLoading ? `${t("common.submit")}...` : t("auth.resendCode")}
         </Button>
 
         {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -99,7 +100,7 @@ const ForgotPasswordForm = ({ redirectTo }: ForgotPasswordFormProps) => {
           className="inline-flex items-center gap-2 text-sm text-secondary-200 hover:underline"
         >
           <ArrowLeft className="size-4" />
-          Back to Login
+          {t("common.back")}
         </Link>
       </div>
     );
@@ -114,13 +115,13 @@ const ForgotPasswordForm = ({ redirectTo }: ForgotPasswordFormProps) => {
           className="inline-flex items-center gap-2 text-sm text-secondary-200 hover:underline"
         >
           <ArrowLeft className="size-4" />
-          Back to Login
+          {t("common.back")}
         </Link>
       </div>
 
       <div>
         <Label className="text-sm font-semibold text-primary">
-          Email Address
+          {t("auth.email")}
         </Label>
         <Input
           {...register("email")}
@@ -147,19 +148,19 @@ const ForgotPasswordForm = ({ redirectTo }: ForgotPasswordFormProps) => {
         className="w-full bg-primary hover:bg-primary/90"
         disabled={isLoading}
       >
-        {isLoading ? "Sending Reset Link..." : "Send Reset Link"}
+        {isLoading ? `${t("auth.sendResetLink")}...` : t("auth.sendResetLink")}
       </Button>
 
       <Separator orientation="horizontal" className="bg-secondary-100" />
 
       <p className="mt-4 text-sm text-primary text-center">
-        Don't have an account?{" "}
+        {t("auth.noAccount")}{" "}
         <Link
           to="/auth"
           search={{ mode: "register", redirectTo }}
           className="text-secondary-200 hover:underline font-medium"
         >
-          Sign up
+          {t("auth.signUp")}
         </Link>
       </p>
     </form>

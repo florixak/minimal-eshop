@@ -11,10 +11,12 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { useUserStore } from "@/stores/useUserStore";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../ui/input-otp";
+import { useTranslation } from "react-i18next";
 
 const CODE_COOLDOWN = 30; // seconds
 
 const VerifyEmail = () => {
+  const { t } = useTranslation();
   const search = Route.useSearch() as {
     email?: string;
     mode?: string;
@@ -110,7 +112,7 @@ const VerifyEmail = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 font-inter">
       <div>
-        <Label className="text-sm font-semibold text-primary">Email</Label>
+        <Label className="text-sm font-semibold text-primary">{t("auth.email")}</Label>
         <Input
           {...register("email")}
           type="email"
@@ -124,7 +126,7 @@ const VerifyEmail = () => {
       </div>
       <div>
         <Label className="text-sm font-semibold text-primary">
-          Verification code
+          {t("auth.verifyEmail")}
         </Label>
         <InputOTP
           maxLength={6}
@@ -147,7 +149,7 @@ const VerifyEmail = () => {
 
       <div className="flex items-center justify-between gap-2">
         <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Verifying..." : "Verify email"}
+          {isSubmitting ? `${t("auth.verify")}...` : t("auth.verify")}
         </Button>
 
         <div className="text-right">
@@ -158,7 +160,7 @@ const VerifyEmail = () => {
             onClick={handleResend}
             disabled={cooldown > 0}
           >
-            {cooldown > 0 ? `Resend (${cooldown}s)` : "Resend code"}
+            {cooldown > 0 ? `${t("auth.resendCode")} (${cooldown}s)` : t("auth.resendCode")}
           </Button>
         </div>
       </div>

@@ -1,12 +1,14 @@
 import { MapPin } from "lucide-react";
 import Section from "../Section";
 import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
 
 const VisitOurStore = () => {
+  const { t } = useTranslation();
   return (
     <Section
-      title="Visit Our Store"
-      description="Explore our wide range of products and find what you love."
+      title={t("contact.visitOurStore")}
+      description={t("contact.visitOurStoreDescription")}
     >
       <div className="w-full max-w-2xl mx-auto text-center bg-gray-100 p-10 rounded-lg font-inter">
         <MapPin className="mx-auto mb-4 size-12 text-primary" />

@@ -1,12 +1,14 @@
 import { VALUES } from "@/constants";
 import { Card, CardContent } from "../ui/card";
 import Section from "../Section";
+import { useTranslation } from "react-i18next";
 
 const OurValues = () => {
+  const { t } = useTranslation();
   return (
     <Section
-      title="Our Values"
-      description="These principles guide everything we do, from product selection to customer service."
+      title={t("about.ourValues")}
+      description={t("about.valuesDescription")}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {VALUES.map((value, index) => (
@@ -19,10 +21,10 @@ const OurValues = () => {
                 {<value.icon className="size-8 text-primary" />}
               </div>
               <h3 className="text-xl font-semibold text-amber-900">
-                {value.title}
+                {t(`about.values.${index}.title`)}
               </h3>
               <p className="text-amber-700 leading-relaxed">
-                {value.description}
+                {t(`about.values.${index}.description`)}
               </p>
             </CardContent>
           </Card>

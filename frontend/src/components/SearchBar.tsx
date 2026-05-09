@@ -3,6 +3,7 @@ import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import type { Route } from "@/routes/shop";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type SearchBarProps = {
   search: ReturnType<typeof Route.useSearch>;
@@ -11,6 +12,7 @@ type SearchBarProps = {
 };
 
 const SearchBar = ({ className, search, navigate }: SearchBarProps) => {
+  const { t } = useTranslation();
   const [query, setQuery] = useState<string>((search.query as string) || "");
 
   useEffect(() => {
@@ -31,7 +33,7 @@ const SearchBar = ({ className, search, navigate }: SearchBarProps) => {
         <Search size={16} className="text-secondary-200" />
       </span>
       <Input
-        placeholder="Search for products..."
+        placeholder={t("header.searchPlaceholder")}
         className="pl-10"
         onChange={(e) => setQuery(e.target.value)}
       />

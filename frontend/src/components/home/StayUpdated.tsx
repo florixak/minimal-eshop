@@ -2,8 +2,10 @@ import toast from "react-hot-toast";
 import Button from "../Button";
 import { Input } from "../ui/input";
 import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const StayUpdated = () => {
+  const { t } = useTranslation();
   const [inputValue, setInputValue] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
   const handleSubscribe = (event: React.FormEvent) => {
@@ -23,9 +25,9 @@ const StayUpdated = () => {
 
   return (
     <section className="bg-secondary-50 py-24 px-8 text-center font-playfair space-y-6">
-      <h2 className="text-3xl font-bold text-primary">Stay Updated</h2>
+      <h2 className="text-3xl font-bold text-primary">{t("home.stayUpdatedTitle")}</h2>
       <p className="text-secondary-200">
-        Subscribe to our newsletter for the latest updates.
+        {t("home.stayUpdatedDescription")}
       </p>
       <form
         className="flex flex-col sm:flex-row max-w-md mx-auto items-center gap-2"
@@ -34,12 +36,12 @@ const StayUpdated = () => {
       >
         <Input
           type="email"
-          placeholder="Enter your email"
+          placeholder={t("home.stayUpdatedPlaceholder")}
           className="border rounded-lg bg-white py-5"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <Button className="bg-primary text-white rounded-lg">Subscribe</Button>
+        <Button className="bg-primary text-white rounded-lg">{t("home.stayUpdatedButton")}</Button>
       </form>
     </section>
   );

@@ -1,0 +1,370 @@
+{
+  "header": {
+    "brand": "Minimal",
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin",
+    "searchPlaceholder": "Search for products..."
+  },
+  "footer": {
+    "brandDescription": "Curating beautiful, minimalist home essentials for modern living.",
+    "shop": "Shop",
+    "shopLinks": {
+      "allProducts": "All Products",
+      "newArrivals": "New Arrivals",
+      "bestSellers": "Best Sellers",
+      "sale": "Sale"
+    },
+    "aboutUs": "About Us",
+    "aboutLinks": {
+      "ourStory": "Our Story",
+      "mission": "Mission",
+      "values": "Values"
+    },
+    "customerService": "Customer Service",
+    "serviceLinks": {
+      "contactUs": "Contact Us",
+      "returns": "Returns",
+      "shippingInfo": "Shipping Info"
+    },
+    "followUs": "Follow us on social media:",
+    "copyright": "All rights reserved."
+  },
+  "home": {
+    "heroTitle": "Minimal Design,",
+    "heroSubtitle": "Maximum Impact",
+    "heroDescription": "Discover our curated collection of minimalist home essentials.",
+    "shopCollection": "Shop Collection",
+    "learnMore": "Learn More",
+    "shopByCategory": "Shop By Category",
+    "stayUpdatedTitle": "Stay Updated",
+    "stayUpdatedDescription": "Subscribe to our newsletter for exclusive offers and new arrivals.",
+    "stayUpdatedPlaceholder": "Enter your email",
+    "stayUpdatedButton": "Subscribe"
+  },
+  "shop": {
+    "title": "Shop",
+    "description": "Discover our complete collection of minimalist home essentials, carefully curated for modern living.",
+    "allProducts": "All Products",
+    "sortBy": "Sort By",
+    "priceLowToHigh": "Price: Low to High",
+    "priceHighToLow": "Price: High to Low",
+    "newestArrivals": "Newest Arrivals",
+    "noFilter": "Default",
+    "category": "Category",
+    "all": "All",
+    "priceRange": "Price Range",
+    "availability": "Availability",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "noProducts": "No products found.",
+    "view": "View",
+    "addToCart": "Add to Cart",
+    "quickView": "Quick View",
+    "shippingMethods": {
+      "STANDARD": {
+        "label": "Standard Shipping",
+        "description": "Delivered in 3-5 business days"
+      },
+      "EXPRESS": {
+        "label": "Express Shipping",
+        "description": "Delivered in 1-2 business days"
+      },
+      "OVERNIGHT": {
+        "label": "Overnight Shipping",
+        "description": "Delivered by next business day"
+      }
+    }
+  },
+  "auth": {
+    "login": "Log In",
+    "register": "Register",
+    "logout": "Log Out",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "sendResetLink": "Send Reset Link",
+    "verifyEmail": "Verify Email",
+    "enterOtp": "Enter the verification code sent to your email",
+    "verify": "Verify",
+    "resendCode": "Resend Code",
+    "notYou": "Not you?"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "startShopping": "Start Shopping",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "quantity": "Qty",
+    "summary": "Order Summary",
+    "freeShippingThreshold": "Free shipping on orders over {{price}}",
+    "continueShopping": "Continue Shopping"
+  },
+  "checkout": {
+    "step": "Step {{step}} of {{total}}",
+    "shipping": "Shipping",
+    "payment": "Payment",
+    "shippingInfo": "Shipping Information",
+    "fullName": "Full Name",
+    "address": "Address",
+    "city": "City",
+    "state": "State",
+    "zipCode": "Zip Code",
+    "country": "Country",
+    "paymentMethod": "Payment Method",
+    "cardNumber": "Card Number",
+    "expiryDate": "Expiry Date",
+    "cvc": "CVC",
+    "placeOrder": "Place Order",
+    "orderSummary": "Order Summary",
+    "orderPlaced": "Order Placed Successfully!",
+    "orderNumber": "Order Number",
+    "continueShopping": "Continue Shopping",
+    "standardShipping": "Standard Shipping",
+    "expressShipping": "Express Shipping",
+    "overnightShipping": "Overnight Shipping",
+    "standardDelivery": "Delivered in 3-5 business days",
+    "expressDelivery": "Delivered in 1-2 business days",
+    "overnightDelivery": "Delivered by next business day",
+    "orderSuccessMessage": "Thank you for your order! We'll send you a confirmation email shortly.",
+    "orderCancelled": "Order Cancelled",
+    "orderCancelledMessage": "Your order has been cancelled. You can continue shopping or try again.",
+    "tryAgain": "Try Again",
+    "secureCheckout": "Secure Checkout",
+    "freeShippingBanner": "Free Shipping {{price}}+",
+    "30DayReturns": "30-Day Returns",
+    "shippingCalculatedAtCheckout": "Shipping calculated at checkout."
+  },
+  "account": {
+    "title": "My Account",
+    "profile": "Profile",
+    "orders": "Orders",
+    "wishlist": "Wishlist",
+    "settings": "Settings",
+    "editProfile": "Edit Profile",
+    "changePassword": "Change Password",
+    "savedAddresses": "Saved Addresses",
+    "noOrders": "No orders yet",
+    "noWishlist": "Your wishlist is empty",
+    "viewOrder": "View Order",
+    "personalInfo": "Personal Information",
+    "emailAddress": "Email Address",
+    "memberSince": "Member since {{date}}",
+    "logout": "Log Out",
+    "orderHistory": "Order History",
+    "orderDetails": "Order Details",
+    "orderDate": "Date",
+    "orderStatus": "Status",
+    "orderTotal": "Total",
+    "shippingAddress": "Shipping Address",
+    "billingAddress": "Billing Address"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "products": "Products",
+    "users": "Users",
+    "revenue": "Revenue",
+    "totalOrders": "Total Orders",
+    "totalProducts": "Total Products",
+    "totalUsers": "Total Users",
+    "recentOrders": "Recent Orders",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "addUser": "Add User",
+    "editUser": "Edit User"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "errorMessage": "An unexpected error occurred. Please try again later.",
+    "goHome": "Go Home",
+    "goToShop": "Go to Shop",
+    "notFound": "404 - Not Found",
+    "notFoundMessage": "Sorry, the page you are looking for does not exist or has been moved.",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "apply": "Apply",
+    "noResults": "No results found.",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "close": "Close"
+  },
+  "about": {
+    "title": "About Us",
+    "heroTitle": "Our Story of",
+    "heroSubtitle": "Minimal Living",
+    "heroDescription": "Founded in 2009, Minimal began with a simple belief: that beautiful, functional design should be accessible to everyone. We curate timeless pieces that transform houses into homes.",
+    "shopOurStory": "Shop Our Story",
+    "meetOurTeam": "Meet Our Team",
+    "ourMission": "Our Mission",
+    "missionDescription": "To make beautiful, sustainable, and functional design accessible to everyone. We believe that your home should be a reflection of your values—simple, authentic, and thoughtfully curated.",
+    "missionQuote": "“Design is not just what it looks like and feels like. Design is how it works. We create spaces that work beautifully for real life.”",
+    "missionAuthor": "- Sarah Chen, Founder",
+    "ourStory": "Our Story",
+    "ourValues": "Our Values",
+    "valuesDescription": "These principles guide everything we do, from product selection to customer service.",
+    "ourTeam": "Our Team",
+    "teamDescription": "The passionate people behind Minimal, dedicated to bringing you exceptional design and service.",
+    "testimonials": "Testimonials",
+    "testimonialsTitle": "What Our Customers Say",
+    "testimonialsDescription": "Don't just take our word for it. Here's what our community has to say about their Minimal experience.",
+    "statistics": "Our Impact",
+    "stats": {
+      "happyCustomers": "Happy Customers",
+      "yearsExperience": "Years Experience",
+      "curatedProducts": "Curated Products",
+      "customerSatisfaction": "Customer Satisfaction"
+    },
+    "getInTouch": "Get in Touch",
+    "getInTouchDescription": "Have questions about our products or need design advice? We'd love to hear from you.",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "visitUs": "Visit Us",
+    "aboutEndTitle": "Ready to Transform Your Space?",
+    "aboutEndDescription": "Discover our curated collection of minimalist home essentials and start creating your perfect space today.",
+    "shopCollection": "Shop Collection",
+    "designConsultation": "Design Consultation",
+    "values": [
+      {
+        "title": "Sustainability",
+        "description": "We source materials responsibly and partner with eco-conscious manufacturers to minimize our environmental impact."
+      },
+      {
+        "title": "Quality Craftsmanship",
+        "description": "Every piece is carefully selected for its superior quality, durability, and timeless design that lasts for generations."
+      },
+      {
+        "title": "Community Focus",
+        "description": "We support local artisans and small businesses, fostering a community of creators who share our passion for minimalist design."
+      },
+      {
+        "title": "Customer Trust",
+        "description": "Your satisfaction is our priority. We stand behind every product with comprehensive warranties and exceptional service."
+      }
+    ],
+    "team": [
+      {
+        "role": "Founder & Creative Director",
+        "bio": "With 15 years in interior design, Sarah founded Minimal to bring accessible, beautiful design to every home."
+      },
+      {
+        "role": "Head of Product",
+        "bio": "Marcus ensures every product meets our high standards for quality, functionality, and aesthetic appeal."
+      },
+      {
+        "role": "Sustainability Director",
+        "bio": "Elena leads our commitment to environmental responsibility and ethical sourcing practices."
+      },
+      {
+        "role": "Customer Experience",
+        "bio": "David ensures every customer interaction reflects our values of care, quality, and attention to detail."
+      }
+    ],
+    "testimonials": [
+      {
+        "role": "Interior Designer",
+        "content": "Minimal has become my go-to source for clients who want clean, sophisticated pieces. The quality is consistently exceptional."
+      },
+      {
+        "role": "Homeowner",
+        "content": "I've furnished my entire home with Minimal pieces. Each item is beautifully crafted and the customer service is outstanding."
+      },
+      {
+        "role": "Architect",
+        "content": "The attention to detail and commitment to sustainability makes Minimal stand out. I recommend them to all my clients."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "headerTitle": "Get in Touch",
+    "headerDescription": "We'd love to hear from you! Whether you have a question about our products, need help with an order, or just want to say hello.",
+    "sendMessage": "Send Message",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "sendButton": "Send Message",
+    "generalInquiry": "General Inquiry",
+    "orderSupport": "Order Support",
+    "productQuestion": "Product Question",
+    "shippingReturns": "Shipping & Returns",
+    "technicalSupport": "Technical Support",
+    "partnerships": "Partnerships",
+    "feedback": "Feedback & Suggestions",
+    "faq": "Frequently Asked Questions",
+    "faqDescription": "Find answers to common questions about our products, shipping, and policies.",
+    "visitOurStore": "Visit Our Store",
+    "visitOurStoreDescription": "Come visit our physical store and experience our products in person.",
+    "contactInfo": "Contact Information",
+    "contactInfoDescription": "You can reach us at the following contact points.",
+    "faqItems": [
+      {
+        "question": "What is your return policy?",
+        "answer": "We offer a 30-day return policy for all items in original condition. Free returns on orders over $100.00."
+      },
+      {
+        "question": "How long does shipping take?",
+        "answer": "Standard shipping takes 3-5 business days. Express shipping (1-2 days) and overnight options available."
+      },
+      {
+        "question": "Do you offer international shipping?",
+        "answer": "Yes, we ship worldwide. International shipping typically takes 7-14 business days depending on location."
+      },
+      {
+        "question": "Can I track my order?",
+        "answer": "You'll receive a tracking number via email once your order ships. You can also track orders in your account."
+      }
+    ],
+    "contactInfoItems": [
+      {
+        "title": "Visit Our Store",
+        "extra": "Open 7 days a week"
+      },
+      {
+        "title": "Call Us",
+        "extra": "Mon-Fri: 9AM-8PM EST"
+      },
+      {
+        "title": "Email Us",
+        "extra": "We reply within 24 hours"
+      },
+      {
+        "title": "Business Hours",
+        "extra": "EST (Eastern Standard Time)"
+      }
+    ],
+    "categories": [
+      "General Inquiry",
+      "Order Support",
+      "Product Question",
+      "Shipping & Returns",
+      "Technical Support",
+      "Partnerships",
+      "Feedback & Suggestions"
+    ]
+  }
+}

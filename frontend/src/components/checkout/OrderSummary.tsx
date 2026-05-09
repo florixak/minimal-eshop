@@ -8,6 +8,7 @@ import { FREE_SHIPPING_THRESHOLD } from "@/constants";
 import { useCartStore } from "@/stores/useCartStore";
 import { useUserStore } from "@/stores/useUserStore";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 type OrderSummaryProps = {
   shippingCost: number;
@@ -15,6 +16,7 @@ type OrderSummaryProps = {
 };
 
 const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
+  const { t } = useTranslation();
   const { cartItems } = useCartStore();
   const { quantity, subtotal, shipping, tax, total, isFreeShipping } =
     useOrderCalculations(cartItems, shippingCost);
@@ -31,7 +33,7 @@ const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
     <Card className="sticky top-6">
       <CardHeader>
         <h2 className="text-xl font-bold text-primary font-playfair">
-          Order Summary
+          {t("cart.summary")}
         </h2>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -47,7 +49,7 @@ const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
                 {item.product.title}
               </h4>
               <p className="text-sm text-secondary-200">
-                Quantity: {item.quantity}
+                {t("cart.quantity")}: {item.quantity}
               </p>
             </div>
           </div>
@@ -57,16 +59,16 @@ const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
         <Separator className="bg-secondary-100" />
         <div className="w-full flex justify-between text-sm text-primary font-inter">
           <span className="text-secondary-200">
-            Subtotal ({quantity} items)
+            {t("cart.subtotal")} ({quantity} items)
           </span>
           <span className="font-semibold">{formatPrice(subtotal)}</span>
         </div>
 
         <div className="w-full flex justify-between text-sm text-primary font-inter">
-          <span className="text-secondary-200">Shipping</span>
+          <span className="text-secondary-200">{t("cart.shipping")}</span>
           {isFreeShipping ? (
             <span className="font-semibold">
-              Free (over {formatPrice(FREE_SHIPPING_THRESHOLD)})
+              {t("cart.free")} (over {formatPrice(FREE_SHIPPING_THRESHOLD)})
             </span>
           ) : (
             <span className="font-semibold">{formatPrice(shipping)}</span>
@@ -81,7 +83,7 @@ const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
         <Separator className="bg-secondary-100" />
 
         <div className="w-full flex justify-between text-lg font-semibold text-primary font-inter">
-          <span>Total</span>
+          <span>{t("cart.total")}</span>
           <span>{formatPrice(total)}</span>
         </div>
         {isCartPage && (
@@ -98,7 +100,7 @@ const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
                   className="w-full bg-primary hover:bg-primary/90 py-3"
                   disabled={true}
                 >
-                  Proceed to Checkout
+                  {t("cart.checkout")}
                 </Button>
               ) : (
                 <Button
@@ -110,7 +112,7 @@ const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
                   disabled={!user?.verified}
                 >
                   <Link to="/cart/checkout" search={{ step: 1 }}>
-                    Proceed to Checkout
+                    {t("cart.checkout")}
                   </Link>
                 </Button>
               )}
@@ -128,7 +130,7 @@ const OrderSummary = ({ shippingCost, isCartPage }: OrderSummaryProps) => {
                     page: 1,
                   }}
                 >
-                  Continue Shopping
+                  {t("cart.continueShopping")}
                 </Link>
               </Button>
             </div>

@@ -1,12 +1,14 @@
 import { MessageSquare, Star, Phone } from "lucide-react";
 import Section from "../Section";
 import { Badge } from "../ui/badge";
+import { useTranslation } from "react-i18next";
 
 const ContactHeader = () => {
+  const { t } = useTranslation();
   return (
     <Section
-      title="Get in Touch"
-      description="We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+      title={t("contact.headerTitle")}
+      description={t("contact.headerDescription")}
       bgClassName="bg-secondary-50"
       className="pt-32"
     >

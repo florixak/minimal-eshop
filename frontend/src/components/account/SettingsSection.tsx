@@ -5,8 +5,10 @@ import { useForm } from "react-hook-form";
 import { updateUserPassword } from "@/lib/api";
 import FormField from "../FormField";
 import { useNavigate } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
 const SettingsSection = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const {
     register,
@@ -57,20 +59,20 @@ const SettingsSection = () => {
       <Card>
         <CardHeader>
           <h2 className="text-2xl font-bold text-primary font-playfair">
-            Account Settings
+            {t("account.settings")}
           </h2>
           <p className="text-secondary-200">
-            Manage your account preferences and security
+            {t("account.editProfile")}
           </p>
         </CardHeader>
         <CardContent className="space-y-6">
           <form onSubmit={handlePasswordUpdate} className="space-y-4">
             <h3 className="text-lg font-semibold text-primary font-playfair mb-4">
-              Security
+              {t("account.changePassword")}
             </h3>
             <div className="space-y-4">
               <FormField
-                label="Current Password"
+                label={t("auth.password")}
                 id="currentPassword"
                 type="password"
                 register={register}
@@ -79,7 +81,7 @@ const SettingsSection = () => {
               />
 
               <FormField
-                label="New Password"
+                label={t("auth.password")}
                 id="newPassword"
                 type="password"
                 register={register}
@@ -88,7 +90,7 @@ const SettingsSection = () => {
               />
 
               <FormField
-                label="Confirm New Password"
+                label={t("auth.confirmPassword")}
                 id="confirmNewPassword"
                 type="password"
                 register={register}
@@ -97,7 +99,7 @@ const SettingsSection = () => {
               />
 
               <Button variant="outline" disabled={isSubmitting || !isDirty}>
-                Update Password
+                {t("account.changePassword")}
               </Button>
             </div>
           </form>
@@ -108,7 +110,7 @@ const SettingsSection = () => {
             <h3 className="text-lg font-semibold text-primary font-playfair mb-4">
               Danger Zone
             </h3>
-            <Button variant="destructive">Delete Account</Button>
+            <Button variant="destructive">{t("common.delete")}</Button>
           </div>
         </CardContent>
       </Card>

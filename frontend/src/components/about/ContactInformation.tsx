@@ -1,12 +1,14 @@
 import { CONTACT_INFO } from "@/constants";
 import Section from "../Section";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
+import { useTranslation } from "react-i18next";
 
 const ContactInformation = () => {
+  const { t } = useTranslation();
   return (
     <Section
-      title="Contact Information"
-      description="You can reach us at the following contact points."
+      title={t("contact.contactInfo")}
+      description={t("contact.contactInfoDescription")}
     >
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {CONTACT_INFO.map((info, index) => (
@@ -19,7 +21,7 @@ const ContactInformation = () => {
                 <info.icon className="h-6 w-6 text-primary" />
               </div>
               <CardTitle className="text-lg text-primary">
-                {info.title}
+                {t(`contact.contactInfoItems.${index}.title`)}
               </CardTitle>
             </CardHeader>
             <CardContent className="font-inter">
@@ -29,7 +31,7 @@ const ContactInformation = () => {
                 </p>
               ))}
               <p className="text-sm text-secondary-200 mt-2 font-medium">
-                {info.extra}
+                {t(`contact.contactInfoItems.${index}.extra`)}
               </p>
             </CardContent>
           </Card>

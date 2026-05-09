@@ -9,6 +9,7 @@ import { Button } from "../ui/button";
 import { Link } from "@tanstack/react-router";
 import FormField from "../FormField";
 import { Label } from "../ui/label";
+import { useTranslation } from "react-i18next";
 
 type ShippingInfoStepProps = {
   form: UseFormReturn<CheckoutFormData>;
@@ -16,6 +17,7 @@ type ShippingInfoStepProps = {
 };
 
 const ShippingInfoStep = ({ form, onSubmit }: ShippingInfoStepProps) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -27,35 +29,35 @@ const ShippingInfoStep = ({ form, onSubmit }: ShippingInfoStepProps) => {
       <CardHeader>
         <h2 className="flex items-center text-xl font-bold text-primary font-playfair">
           <Truck className="inline-block mr-2" size={24} />
-          Shipping Information
+          {t("checkout.shippingInfo")}
         </h2>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
-              label="First Name"
+              label={t("checkout.fullName")}
               id="firstName"
               register={register}
               error={errors.firstName?.message}
               isSubmitting={isSubmitting}
             />
             <FormField
-              label="Last Name"
+              label={t("auth.lastName")}
               id="lastName"
               register={register}
               error={errors.lastName?.message}
               isSubmitting={isSubmitting}
             />
             <FormField
-              label="Email"
+              label={t("auth.email")}
               id="email"
               register={register}
               error={errors.email?.message}
               isSubmitting={isSubmitting}
             />
             <FormField
-              label="Phone"
+              label={t("auth.phone")}
               id="phone"
               register={register}
               error={errors.phone?.message}
@@ -63,7 +65,7 @@ const ShippingInfoStep = ({ form, onSubmit }: ShippingInfoStepProps) => {
             />
           </div>
           <FormField
-            label="Address"
+            label={t("checkout.address")}
             id="address"
             register={register}
             error={errors.address?.message}
@@ -71,28 +73,28 @@ const ShippingInfoStep = ({ form, onSubmit }: ShippingInfoStepProps) => {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
-              label="City"
+              label={t("checkout.city")}
               id="city"
               register={register}
               error={errors.city?.message}
               isSubmitting={isSubmitting}
             />
             <FormField
-              label="State"
+              label={t("checkout.state")}
               id="state"
               register={register}
               error={errors.state?.message}
               isSubmitting={isSubmitting}
             />
             <FormField
-              label="ZIP Code"
+              label={t("checkout.zipCode")}
               id="postalCode"
               register={register}
               error={errors.postalCode?.message}
               isSubmitting={isSubmitting}
             />
             <FormField
-              label="Country"
+              label={t("checkout.country")}
               id="country"
               register={register}
               error={errors.country?.message}
@@ -100,9 +102,9 @@ const ShippingInfoStep = ({ form, onSubmit }: ShippingInfoStepProps) => {
             />
           </div>
           <h3 className="text-lg font-semibold font-playfair mt-4 text-primary">
-            Shipping Method
+            {t("checkout.shippingInfo")}
           </h3>
-          {Array.from(Object.entries(SHIPPING_METHODS)).map(([key, method]) => (
+          {Array.from(Object.entries(SHIPPING_METHODS)).map(([key]) => (
             <div
               key={key}
               className="flex items-center border border-secondary-100 p-2 rounded-lg"
@@ -121,10 +123,10 @@ const ShippingInfoStep = ({ form, onSubmit }: ShippingInfoStepProps) => {
                 className="text-sm flex justify-between w-full"
               >
                 <span>
-                  {method.label} ({method.description})
+                  {t(`shop.shippingMethods.${key}.label`)} ({t(`shop.shippingMethods.${key}.description`)})
                 </span>
                 <span className="font-semibold">
-                  {formatPrice(method.cost)}
+                  {formatPrice(SHIPPING_METHODS[key].cost)}
                 </span>
               </Label>
             </div>
@@ -136,12 +138,12 @@ const ShippingInfoStep = ({ form, onSubmit }: ShippingInfoStepProps) => {
               asChild
             >
               <Link to="/cart" className="text-sm text-secondary-200">
-                <ArrowLeft /> Back to Cart
+                <ArrowLeft /> {t("common.back")}
               </Link>
             </Button>
 
             <Button type="button" onClick={onSubmit}>
-              Continue to Payment
+              {t("common.next")}
             </Button>
           </div>
         </form>

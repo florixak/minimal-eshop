@@ -11,12 +11,14 @@ import { Separator } from "../ui/separator";
 import { registerSchema, type RegisterFormData } from "@/lib/schema";
 import { useUserStore } from "@/stores/useUserStore";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 type RegisterFormProps = {
   redirectTo?: string;
 };
 
 const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -69,7 +71,7 @@ const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
             htmlFor="firstName"
             className="text-sm font-semibold text-primary"
           >
-            First Name
+            {t("auth.firstName")}
           </Label>
           <Input
             {...register("firstName")}
@@ -88,7 +90,7 @@ const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
             htmlFor="lastName"
             className="text-sm font-semibold text-primary"
           >
-            Last Name
+            {t("auth.lastName")}
           </Label>
           <Input
             {...register("lastName")}
@@ -105,7 +107,7 @@ const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
 
       <div>
         <Label htmlFor="email" className="text-sm font-semibold text-primary">
-          Email Address
+          {t("auth.email")}
         </Label>
         <Input
           {...register("email")}
@@ -140,7 +142,7 @@ const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
           htmlFor="password"
           className="text-sm font-semibold text-primary"
         >
-          Password
+          {t("auth.password")}
         </Label>
         <div className="relative mt-1">
           <Input
@@ -172,7 +174,7 @@ const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
           htmlFor="confirmPassword"
           className="text-sm font-semibold text-primary"
         >
-          Confirm Password
+          {t("auth.confirmPassword")}
         </Label>
         <div className="relative mt-1">
           <Input
@@ -206,19 +208,19 @@ const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
         className="w-full bg-primary hover:bg-primary/90"
         disabled={isLoading}
       >
-        {isLoading ? "Creating Account..." : "Create Account"}
+        {isLoading ? `${t("auth.register")}...` : t("auth.register")}
       </Button>
 
       <Separator orientation="horizontal" className="bg-secondary-100" />
 
       <p className="mt-4 text-sm text-primary text-center">
-        Already have an account?{" "}
+        {t("auth.hasAccount")}{" "}
         <Link
           to="/auth"
           search={{ mode: "login", redirectTo }}
           className="text-secondary-200 hover:underline font-medium"
         >
-          Sign in
+          {t("auth.signIn")}
         </Link>
       </p>
     </form>

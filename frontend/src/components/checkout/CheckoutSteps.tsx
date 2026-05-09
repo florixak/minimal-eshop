@@ -1,11 +1,22 @@
 import { CHECKOUT_STEPS } from "@/constants";
 import { CheckCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type CheckoutStepsProps = {
   currentStep: number;
 };
 
 const CheckoutSteps = ({ currentStep }: CheckoutStepsProps) => {
+  const { t } = useTranslation();
+
+  const getStepTitle = (step: (typeof CHECKOUT_STEPS)[number]) => {
+    switch (step.number) {
+      case 1: return t("checkout.shipping");
+      case 2: return t("checkout.payment");
+      default: return step.title;
+    }
+  };
+
   return (
     <div className="flex items-center justify-evenly max-w-xl mx-auto">
       {CHECKOUT_STEPS.map((step, index) => (
@@ -29,7 +40,7 @@ const CheckoutSteps = ({ currentStep }: CheckoutStepsProps) => {
                 currentStep >= step.number ? "text-primary" : "text-gray-400"
               }`}
             >
-              {step.title}
+              {getStepTitle(step)}
             </p>
           </div>
           {index < CHECKOUT_STEPS.length - 1 && (
