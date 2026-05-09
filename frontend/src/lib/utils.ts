@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { CURRENCY_CONFIG } from "@/config/currency";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -9,7 +10,7 @@ export function slugify(str: string) {
   return str.toLowerCase().replace(/\s+/g, "-");
 }
 
-const USD_TO_CNY = 7.25;
+const USD_TO_CNY = CURRENCY_CONFIG.exchangeRates.USD_TO_CNY;
 
 export const formatPrice = (price: number | string) => {
   const locale =

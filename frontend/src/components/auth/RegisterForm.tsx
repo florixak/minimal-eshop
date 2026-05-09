@@ -48,12 +48,12 @@ const RegisterForm = ({ redirectTo }: RegisterFormProps) => {
       });
 
       reset();
-      toast.success("Registration successful! You can now sign in.");
+      toast.success("Registration successful! Please verify your email.");
 
       setTimeout(() => {
         navigate({
           to: "/auth",
-          search: { mode: "login", redirectTo },
+          search: { mode: "verify-email", redirectTo, email: data.email },
         });
       }, 2000);
     } catch (err) {
