@@ -5,10 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function slugify(str: string) {
-  return str.toLowerCase().replace(/\s+/g, "-");
-}
-
 export const formatPrice = (price: number | string) => {
   try {
     return new Intl.NumberFormat("en-US", {
@@ -37,7 +33,7 @@ export const formatDate = (dateString: string) => {
 };
 
 export const calculateTotal = (
-  items: { price: number; quantity: number }[]
+  items: { price: number; quantity: number }[],
 ) => {
   return items.reduce((total, item) => total + item.price * item.quantity, 0);
 };
