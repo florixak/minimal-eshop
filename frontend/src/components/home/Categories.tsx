@@ -1,4 +1,3 @@
-import { slugify } from "@/lib/utils";
 import { Route } from "@/routes";
 
 import { Skeleton } from "../ui/skeleton";
@@ -32,7 +31,7 @@ const Categories = () => {
       <Button
         onClick={() =>
           navigate({
-            search: { ...search, category: slugify("all") },
+            search: { ...search, category: "all" },
             resetScroll: false,
           })
         }
@@ -43,10 +42,10 @@ const Categories = () => {
       {categories.map((cat) => (
         <Button
           key={cat.id}
-          isActive={search.category === slugify(cat.title)}
+          isActive={search.category === cat.slug}
           onClick={() => {
             navigate({
-              search: { ...search, category: slugify(cat.title) },
+              search: { ...search, category: cat.slug },
               resetScroll: false,
             });
           }}
